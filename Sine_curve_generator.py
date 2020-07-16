@@ -3,12 +3,12 @@ import math
 import numpy
 
 sin_pts = []
+x_pts = numpy.arange(0, 10, 0.01)
 
-for x in numpy.arange(0, 10, 0.01):
-    sin_pts.append(math.sin(x))
+def sin_graph(amp):
+    for x in x_pts:
+        sin_pts.append(amp * math.sin(x))
+    plt.plot(x_pts, sin_pts)
+    plt.show()
 
-plt.plot( sin_pts)
-plt.axis([0, 10, -2, 2])
-plt.show()
-
-
+sin_graph(4)
